@@ -1,0 +1,53 @@
+<h1>Show Truck</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @truck.name %>
+  </li>
+
+  <li>
+    <strong>Address:</strong>
+    <%= @truck.address %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @truck.status %>
+  </li>
+
+  <li>
+    <strong>Food items:</strong>
+    <%= @truck.food_items %>
+  </li>
+
+  <li>
+    <strong>Nate rate:</strong>
+    <%= @truck.nate_rate %>
+  </li>
+
+  <li>
+    <strong>Tess rate:</strong>
+    <%= @truck.tess_rate %>
+  </li>
+
+  <li>
+    <strong>Joe rate:</strong>
+    <%= @truck.joe_rate %>
+  </li>
+
+  <li>
+    <strong>Miao rate:</strong>
+    <%= @truck.miao_rate %>
+  </li>
+
+  <li>
+    <strong>Team rate:</strong>
+    <%= @truck.team_rate %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.truck_path(@conn, :edit, @truck) %></span> |
+<span><%= link "Back", to: Routes.truck_path(@conn, :index) %></span>

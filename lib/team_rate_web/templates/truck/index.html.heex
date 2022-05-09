@@ -1,0 +1,43 @@
+<h1>Listing Trucks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Status</th>
+      <th>Food items</th>
+      <th>Nate rate</th>
+      <th>Tess rate</th>
+      <th>Joe rate</th>
+      <th>Miao rate</th>
+      <th>Team rate</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for truck <- @trucks do %>
+    <tr>
+      <td><%= truck.name %></td>
+      <td><%= truck.address %></td>
+      <td><%= truck.status %></td>
+      <td><%= truck.food_items %></td>
+      <td><%= truck.nate_rate %></td>
+      <td><%= truck.tess_rate %></td>
+      <td><%= truck.joe_rate %></td>
+      <td><%= truck.miao_rate %></td>
+      <td><%= truck.team_rate %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.truck_path(@conn, :show, truck) %></span>
+        <span><%= link "Edit", to: Routes.truck_path(@conn, :edit, truck) %></span>
+        <span><%= link "Delete", to: Routes.truck_path(@conn, :delete, truck), method: :delete, data: [confirm: "Are you sure?"] %></span>
+        <span><%= length(@trucks) %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Truck", to: Routes.truck_path(@conn, :new) %></span>
